@@ -80,9 +80,12 @@ jobs:
         with:
           app-name: 'mardol'
           slot-name: 'Production'
-          
+
       - name: Install Gunicorn
         run: pip install gunicorn
+
+      - name: Install flask
+        run: pip install flask
           
       - name: Start Gunicorn Server
         run: gunicorn --workers 4 --bind 0.0.0.0:8000 app:app
